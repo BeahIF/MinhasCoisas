@@ -1,0 +1,12 @@
+package cobaia;
+
+import java.util.Date;
+
+public class Aluno {
+	
+	private String nome;
+	private String sobrenome;
+	private int matricula;
+	private Date dataNascimento;
+	
+}

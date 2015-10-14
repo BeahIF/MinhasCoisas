@@ -1,0 +1,31 @@
+package gerador;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import javax.imageio.ImageIO;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedImage imagem = ImageIO.read(new File("download.jpg"));	
+		//BufferedImage bufferedImage = new BufferedImage(200, 200, imagem);  
+		
+		Graphics b = imagem.createGraphics();  
+		
+		b.setColor(Color.WHITE);  
+        b.setFont(new Font("Arial ", Font.PLAIN, 40));    
+        b.drawString("MEU DEUS", 5, 25);   
+        ImageIO.write(imagem, "jpg", new File("mme.jpg"));
+        
+        
+
+	}
+
+}

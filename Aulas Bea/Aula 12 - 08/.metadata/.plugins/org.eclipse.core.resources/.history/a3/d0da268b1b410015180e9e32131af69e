@@ -1,0 +1,13 @@
+package cobaia;
+
+import java.io.File;
+
+public class Gravar3 {
+
+	public static void main(String[] args) throws Exception{
+		//banco.csv
+		File banco = new File("banco.csv");
+		
+	}
+
+}

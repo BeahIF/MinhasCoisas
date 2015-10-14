@@ -1,0 +1,33 @@
+package cobaia;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
+public class Gravar {
+	
+	public static void main(String [] args) throws FileNotFoundException{
+		 // caminho absoluto (fixo)
+		// caminho relativo (conta a partir do local do programa)
+		
+		//try {
+			// Gravar.class.getRespurce(".").toURI();
+			//System.out.println(uri);
+		//} catch (URISyntaxException e){
+	//		e.printStackTrace():
+		//}
+		File f = new File ("d:/DBosta/meuarquivo.txt");
+		System.out.println(f.getAbsolutePath());
+		//System.out. == imprime no console/terminal
+		System.out.println("alguma coisa");
+		
+		PrintStream fileOut =  new PrintStream(f);
+		//newPrintStream("d:/DBosta/meuarquivo.txt");
+		
+		fileOut.println("Teste");
+		
+		
+		
+	}
+
+}

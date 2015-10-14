@@ -1,0 +1,22 @@
+package cobaia;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ler2 {
+	public static void main(String [] args) throws Exception{
+		File alunos =  new File ("alunos.csv");
+		Scanner scan = new Scanner(alunos);
+		ArrayList<Aluno> lista = new ArrayList();
+		while(scan.hasNextLine()) {
+			String row = scan.nextLine();
+			String[] vetor =  row.split(";");
+			System.out.println(Arrays.toString(vetor));
+			System.out.println(vetor[1]);
+			// criar um aluno com a line
+		}
+		scan.close();
+	}
+}

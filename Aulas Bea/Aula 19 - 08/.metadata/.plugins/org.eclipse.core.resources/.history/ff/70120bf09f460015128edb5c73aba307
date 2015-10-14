@@ -1,0 +1,18 @@
+package cobaia;
+
+import java.io.*;
+import java.util.*;
+
+public class Gravar5 {
+
+	public static void main(String[] args) 	throws Exception {
+			File dir = new File("professores");
+			if(! dir.exists()) {
+				dir.mkdir(); // make directory
+			}
+		
+		
+
+	}
+
+}

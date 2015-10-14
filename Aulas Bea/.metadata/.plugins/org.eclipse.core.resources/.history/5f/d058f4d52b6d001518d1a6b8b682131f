@@ -1,0 +1,20 @@
+package obi;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//entrada: 43 23 87 23 12 \n
+		// saida: 87\n
+		
+		Scanner scan = new Scanner(System.in);
+		scan.useDelimiter(" ");
+		while(scan.hasNextLine()){
+			System.out.println(scan.nextLine());
+		}
+	}
+
+}
+
+

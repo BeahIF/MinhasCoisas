@@ -1,0 +1,17 @@
+package cobaia;
+
+import java.io.File;
+
+public class Apagar {
+
+	public static void main(String[] args) throws Exception{
+		File arq = new File("professores/1810497.csv"); //id
+		if(arq.exists()){
+			arq.delete();
+		}else{
+			System.out.println("Arquivo não existe");
+		}
+		
+	}
+
+}

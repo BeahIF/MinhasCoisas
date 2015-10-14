@@ -1,0 +1,24 @@
+package gerador;
+
+import java.io.File;
+
+public class Gerador {
+	public static void main(String [] args){
+		File imagem =  new File("download.jpg");
+		
+		Texto a = new Texto ();
+		a.setFrase("Oii");
+		
+		
+
+	
+	
+	
+	
+	
+	
+	}
+	public void drawString(String str, int x, int y){
+			
+		}
+}

@@ -1,0 +1,9 @@
+package gerador;
+
+import java.io.File;
+
+public class Gerador {
+	public void drawString(String str, int x, int y){
+			
+		}
+}

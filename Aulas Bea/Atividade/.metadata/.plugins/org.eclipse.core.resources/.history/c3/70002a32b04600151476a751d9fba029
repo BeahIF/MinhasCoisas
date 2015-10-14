@@ -1,0 +1,20 @@
+package gerador;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+public class Main {
+
+	public static void main(String[] args) {
+		BufferedImage bufferedImage = new BufferedImage(200, 200, BufferedImage.TYPE_INT_RGB);  
+		
+		Graphics b = bufferedImage.createGraphics();  
+		Texto a = new Texto ();
+		
+		a.setFrase("Oii");
+		
+
+	}
+
+}

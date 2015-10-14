@@ -1,0 +1,27 @@
+package controlador;
+
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.*;
+import javax.servlet.http.Part;
+
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+public class FotoControlador implements Route{
+
+	@Override
+	public Object handle(Request req, Response resp) throws Exception {
+		MultipartConfigElement multipart = new MultipartConfigElement("/temp");
+		req.raw().setAttribute("org.eclipse.multipartConfig", multipart);
+		Part file = req.raw().getPart("foto");
+		
+		if(file.getContentType().equals("image/jpeg")){
+			//salvar
+		} else {
+			return "Deve ser enviada uma imagem jpeg";
+		}
+	
+
+}
+}

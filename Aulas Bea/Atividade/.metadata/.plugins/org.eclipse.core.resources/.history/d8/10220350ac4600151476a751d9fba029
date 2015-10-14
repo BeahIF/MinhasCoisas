@@ -1,0 +1,8 @@
+package gerador;
+
+import java.io.File;
+
+public class Gerador {
+
+	File imagem =  new File("download.jpg");
+}

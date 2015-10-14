@@ -1,0 +1,15 @@
+package controlador;
+
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+public class FotoControlador implements Route{
+
+	@Override
+	public Object handle(Request req, Response res) throws Exception {
+		return null;
+	
+
+}
+}

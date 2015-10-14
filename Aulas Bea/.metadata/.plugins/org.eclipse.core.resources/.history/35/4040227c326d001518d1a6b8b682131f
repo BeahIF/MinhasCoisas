@@ -1,0 +1,26 @@
+package obi;
+
+import java.util.*;
+
+public class decifra {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		char[] alfabeto = {'a', 'b', 'c', 'd', 'e', 'f'};
+		char[] tabela = scan.nextLine().toCharArray();
+		String frase = scan.nextLine();
+		String[] auxiliar = new String[frase.length()];
+		
+		for(int c = 0; c < frase.length(); c++){
+			for(int a = 0; a < tabela.length + 1; a++){
+				if(frase.charAt(c) == (tabela[a])){
+					auxiliar[c] =  "" + alfabeto[a];
+					System.out.println(auxiliar[a]);
+				}
+			}
+		}
+		for(int b = 0; b < tabela.length; b++){
+			frase = frase + auxiliar[b];
+		}
+		System.out.println(frase);
+	}
+}

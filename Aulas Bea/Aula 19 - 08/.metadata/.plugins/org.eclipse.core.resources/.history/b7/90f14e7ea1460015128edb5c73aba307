@@ -1,0 +1,10 @@
+package cobaia;
+
+public class Apagar {
+
+	public static void main(String[] args) throws Exception{
+		File arq = new File("professores/1810497.csv");
+		
+	}
+
+}

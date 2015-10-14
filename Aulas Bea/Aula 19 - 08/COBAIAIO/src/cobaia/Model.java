@@ -1,0 +1,25 @@
+package cobaia;
+
+//classe genérica (abstrata)
+//classe abstrata : serve como pai para outras classes
+public abstract class Model {
+	protected int id;
+//PROTECTED : torba o id acessível para as classes filhas
+
+	
+//métodos concretos (com miolo)
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	//métodos abstratos
+	public abstract String toCSV();
+	
+	public abstract void fromCSV(String row);
+		
+	
+}

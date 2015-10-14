@@ -1,0 +1,200 @@
+package atividade;
+
+public class Markdown {
+	
+	 public static String toHTML(String a){
+		 String retorno = "";
+		 int aux = 0;
+		 int j = 0;
+		 char[] texto = new char[a.length()];
+		 String p1 = "<p>";
+		 String p2 = "";
+		 String p3 = "";
+		 String p4 = "<p>";
+		 String p5 = "<p>";
+		 int aux2 = 0;
+		 int a5 = 0;
+		 for(int i = 0; i < a.length(); i++){
+			texto[i] = a.charAt(i);
+		//	System.out.println(texto[i]);
+		 }
+		 if(texto[0] == ('#') && (texto[1] == ' ')) {
+			 for(j = 2; j < a.length(); j++){  
+				 if(texto[j] != ' '){ 
+					 aux = j;
+					 break;
+				 }
+			 }
+			 if(aux != 0){
+				 for(int h = aux; h < a.length(); h++){  
+					 retorno = retorno + texto[h];
+					 //System.out.println(aux);
+					// System.out.println(retorno);
+				 }
+			 }
+			 retorno = retorno.trim();
+			 retorno = "<h1>" + retorno + "</h1>";
+			 return retorno;
+	  	 }	
+		 
+		 if(texto[0] == ('#') && (texto[1] == ('#') && (texto[2] == ' '))){
+			 for(int k = 3; k < a.length(); k++){
+				 retorno = retorno + texto[k];
+				// System.out.println(texto[3]);
+			 }
+			 retorno = "<h2>" + retorno + "</h2>";
+			 return retorno;
+		 }
+		 
+		 if(texto[0] == ('#') && (texto[1] == ('#') && (texto[2] == ('#') && (texto[3] == ' ')))){
+			 for(int l = 4; l < a.length(); l++){
+				 retorno = retorno + texto[l];
+				// System.out.println(texto[3]);
+			 }
+			 retorno = "<h3>" + retorno + "</h3>";
+			 return retorno;
+		 }
+		 
+		 if(texto[0] == ('#') && (texto[1] != ' ')) {
+			 retorno = "<p>" + a + "</p>";
+			 return retorno;
+		 }
+		 
+		 if(texto[0] == ('#') && (texto[1] == ('#') && (texto[2] == ('#') && (texto[3] == ('#'))))){
+			 retorno = "<p>" + a + "</p>";
+			 return retorno;
+		 }
+		 
+		 if(a.length() > 18){
+			 //testa se tem 1*
+			 for(int a3 = 0; a3 < a.length(); a3++){
+				 if(texto[a3] == '*'){
+					 a5 = a5 +1;
+				 }
+			 } 		 
+			
+			// System.out.println(a5);
+			 if(a5 < 2){
+				 for(int a6 = 0; a6 < a.length(); a6++){
+					 //System.out.println("chegou aqui");
+				 	 p5 = p5 + texto[a6];
+				 }
+			 return p5 = p5 + "</p>";
+			 }
+			 if(a5 == 2){
+				 //testa o lugar onde esta o *
+				 for(int i1 = 0; i1 < a.length(); i1++){
+					 if(texto[i1] == '*'){
+						 aux = i1;
+						 break;
+					 }
+				 }
+				 System.out.println(aux);
+				 //testa se tem espaço depois de *
+				 if(texto[aux+1] == ' '){
+					 for(int a1 = 0; a1 < a.length(); a1++){
+						 p1 = p1 + texto[a1];
+					 }
+					 System.out.println(p1);
+					 return p1 + "</p>";
+				 }
+				 //coloca na nova varíavel as letras até antes do *
+				 for(int i4 = 0; i4 < aux; i4++){
+					 p1 = p1 + texto[i4];
+				 }
+				 p2 = p1 + "<em>";
+				 System.out.println(p1);
+				 //testa onde está o segundo *
+				 for(int i2 = aux+2; i2 < a.length(); i2++){
+					 System.out.println(i2);
+					 if(texto[i2] == '*'){
+						 aux2 = i2;
+						 break;
+					 }
+				 }
+				 //testa se tem espaço antes de * ou depois de *
+				 if((texto[aux2-1] == ' ') || (texto[aux+1] == ' ')){
+					 for(int a2 = 0; a2 < a.length(); a2++){
+						 p4 = p4 + texto[a2];
+					 }
+					 System.out.println(p1);
+				  return p4 + "</p>";
+				 }
+				 //adiciona as letras de * até *
+				 for(int i5 = aux+1; i5 < aux2; i5++){ 
+					 p2 = p2 + texto[i5];
+				 }
+				 System.out.println(p2);
+				 p3  = p2 + "</em>";
+				 //adiciona de * até o fim
+				 for(int i3 = aux2+1; i3 < a.length(); i3++){
+					p3 = p3 + texto[i3];
+				 }
+				 //fecha a frase
+				 System.out.println(p3);
+				 p3 = p3 + "</p>";
+				 return p3;
+			 }	 
+		 //teste de negrito
+		 for(int i1 = 0; i1 < a.length(); i1++){
+			 if(texto[i1] == '*' && texto[i1+1] == '*' ){
+				aux = i1;
+				break;
+			 }
+		  }
+		  System.out.println(aux);
+		  System.out.println(aux+1);
+		  for(int i4 = 0; i4 < aux; i4++){
+			   p1 = p1 + texto[i4];
+		  }
+		  System.out.println(p1);
+		  p2 = p1 + "<strong>";
+		  System.out.println(p2);
+		  for(int i2 = aux+2; i2 < a.length(); i2++){
+			  System.out.println(i2);
+			  if(texto[i2] == '*' && texto[i2] == '*'){
+					aux2 = i2;
+					break;
+			}
+		 }
+		 for(int i5 = aux+2; i5 < aux2; i5++){ 
+				 p2 = p2 + texto[i5];
+		}
+			 System.out.println(p2);
+			 p3  = p2 + "</strong>";
+			 //adiciona de * até o fim
+			 for(int i3 = aux2+2; i3 < a.length(); i3++){
+					p3 = p3 + texto[i3];
+			}
+			 //fecha a frase
+			 System.out.println(p3);
+			p3 = p3 + "</p>";
+			return p3;
+		 }else {
+			 a = a.trim();
+		 		 retorno = "<p>" + a + "</p>";
+		 		 return retorno;
+			}
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+			 
+			
+		
+			
+			//for(int i2 = aux; i2 < a.length(); i2++){
+				//p1 = p1 + texto[i2];
+		
+		 }
+
+	 
+	 }
+}
+
